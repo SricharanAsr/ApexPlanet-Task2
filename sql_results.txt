@@ -1,0 +1,65 @@
+--- Query 1 ---
+-- Business Queries for Sales Data
+-- 1. Top 5 transactions by amount
+ Transaction_ID   Customer_Name  Amount    Category Purchase_Date
+           1636 Alaric Saltzman 1964.27 Electronics    2023-06-10
+           1466  Bonnie Bennett 1962.98 Electronics    2023-10-16
+           1416  Tyler Lockwood 1954.38 Electronics    2023-05-16
+           1964   Charlie Black 1952.84 Electronics    2023-11-05
+           1681       Bob Brown 1943.49 Electronics    2023-11-10
+
+--- Query 2 ---
+-- 2. Total revenue and average transaction value per category
+   Category  Transaction_Count  Total_Revenue  Avg_Transaction_Value
+Electronics                209      226094.73            1081.792967
+       Home                208      104946.43             504.550144
+   Clothing                191       30468.20             159.519372
+     Beauty                207       16345.75              78.964976
+  Groceries                185       13708.09              74.097784
+
+--- Query 3 ---
+-- 3. Monthly sales trend (Revenue)
+  Month  Monthly_Revenue  Monthly_Transactions
+2023-01         24431.71                    64
+2023-02         28775.41                    63
+2023-03         21372.40                    60
+2023-04         24227.75                    63
+2023-05         30249.16                    68
+2023-06         27293.39                    77
+2023-07         23585.35                    59
+2023-08         22312.36                    74
+2023-09         24456.21                    61
+2023-10         38195.27                    86
+2023-11         27383.25                    68
+2023-12         26234.10                    63
+2024-01         26127.93                    74
+2024-02         30672.75                    72
+2024-03         16246.16                    48
+
+--- Query 4 ---
+-- 4. Top 5 customers by total spend
+ Customer_Name  Total_Spent  Purchase_Count
+   Alice White     37567.92              89
+Tyler Lockwood     34748.87              81
+Bonnie Bennett     33984.30              72
+ Elena Gilbert     32907.07              77
+ Charlie Black     32615.85              83
+
+--- Query 5 ---
+-- 5. Average transaction value by age group
+Age_Group  Transaction_Count  Avg_Amount
+    18-24                149  371.883154
+    25-34                204  338.515833
+    35-44                215  442.793302
+    45-54                237  368.883629
+      55+                195  433.176410
+
+--- Query 6 ---
+-- 6. Most popular categories by volume
+   Category  Count
+Electronics    209
+       Home    208
+     Beauty    207
+   Clothing    191
+  Groceries    185
+
