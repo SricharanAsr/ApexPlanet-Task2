@@ -13,6 +13,12 @@ if not os.path.exists(base_dir):
     os.makedirs(base_dir)
 
 def generate_data(n_rows=500):
+    """
+    Generates synthetic sales data and saves it to a CSV file and a SQLite database.
+    
+    Args:
+        n_rows (int): The number of rows of data to generate. Defaults to 500.
+    """
     categories = ['Electronics', 'Clothing', 'Home', 'Groceries', 'Beauty']
     names = ['John Doe', 'Jane Smith', 'Bob Brown', 'Alice White', 'Charlie Black', 
              'Elena Gilbert', 'Damon Salvatore', 'Stefan Salvatore', 'Bonnie Bennett', 
