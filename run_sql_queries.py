@@ -1,6 +1,7 @@
 import sqlite3
 import pandas as pd
 import os
+from datetime import datetime
 
 base_dir = r"d:\sricharan-A\documents\Apex_Software_solutions\T2"
 db_path = os.path.join(base_dir, "sales_database.db")
@@ -12,6 +13,7 @@ def run_queries():
     Connects to the SQLite database, reads SQL queries from a file,
     executes them, and saves the results to a text file.
     """
+    print(f"[{datetime.now()}] Starting SQL query execution...")
     with sqlite3.connect(db_path) as conn:
         with open(sql_path, 'r') as f:
             sql_content = f.read()
@@ -37,7 +39,7 @@ def run_queries():
                     out.write("\n\n")
                 except Exception as e:
                     out.write(f"Error executing query: {e}\n\n")
-    print(f"SQL results saved to {output_path}")
+    print(f"[{datetime.now()}] SQL results saved to {output_path}")
 
 if __name__ == "__main__":
     run_queries()
