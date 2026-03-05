@@ -24,5 +24,10 @@ This project focuses on performing Exploratory Data Analysis (EDA) on synthetic 
 - Customer Demographics (Age Group Analysis)
 - Category Popularity & Performance
 
+## 🚀 Future Work
+- Integrate real-time data streaming.
+- Implement more advanced machine learning models for sales prediction.
+- Expand the KPI dashboard with interactive elements.
+
 ---
 *Created as part of the Apex Software Solutions Internship - Task 2.*
