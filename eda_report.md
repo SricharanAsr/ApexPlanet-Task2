@@ -1,7 +1,8 @@
-# Exploratory Data Analysis (EDA) & Business Intelligence Report
+# Exploratory Data Analysis (EDA) & Business Intelligence# Sales Data Exploratory Analysis Report
 
-## 1. Project Objective
-To uncover patterns, trends, and relationships within sales data and develop proficiency in SQL for data extraction and basic dashboarding.
+## 1. Introduction
+This report presents a detailed exploratory analysis of the sales dataset, focusing on identifying key patterns in transaction amounts, customer demographics, and product category performance. The insights derived here are intended to support strategic marketing and inventory management decisions.
+ and develop proficiency in SQL for data extraction and basic dashboarding.
 
 ## 2. Executive Summary
 The analysis was performed on a synthetic dataset of 1000 transactions. The findings indicate a strong performance in the Electronics category, accounting for the highest revenue. The customer base is mature, with the primary spending demographic aged between 25 and 55.
