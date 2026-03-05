@@ -12,34 +12,31 @@ def run_queries():
     Connects to the SQLite database, reads SQL queries from a file,
     executes them, and saves the results to a text file.
     """
-    conn = sqlite3.connect(db_path)
-    
-    with open(sql_path, 'r') as f:
-        sql_content = f.read()
-    
-    # Split queries by semicolon
-    queries = [q.strip() for q in sql_content.split(';') if q.strip()]
-    
-    with open(output_path, 'w') as out:
-        for i, query in enumerate(queries, 1):
-            out.write(f"--- Query {i} ---\n")
-            # Get the comment block before the query if possible for context
-            lines = query.split('\n')
-            query_text = ""
-            for line in lines:
-                if line.startswith('--'):
-                    out.write(line + '\n')
-                else:
-                    query_text += line + '\n'
-            
-            try:
-                df = pd.read_sql_query(query, conn)
-                out.write(df.to_string(index=False))
-                out.write("\n\n")
-            except Exception as e:
-                out.write(f"Error executing query: {e}\n\n")
+    with sqlite3.connect(db_path) as conn:
+        with open(sql_path, 'r') as f:
+            sql_content = f.read()
+        
+        # Split queries by semicolon
+        queries = [q.strip() for q in sql_content.split(';') if q.strip()]
+        
+        with open(output_path, 'w') as out:
+            for i, query in enumerate(queries, 1):
+                out.write(f"--- Query {i} ---\n")
+                # Get the comment block before the query if possible for context
+                lines = query.split('\n')
+                query_text = ""
+                for line in lines:
+                    if line.startswith('--'):
+                        out.write(line + '\n')
+                    else:
+                        query_text += line + '\n'
                 
-    conn.close()
+                try:
+                    df = pd.read_sql_query(query, conn)
+                    out.write(df.to_string(index=False))
+                    out.write("\n\n")
+                except Exception as e:
+                    out.write(f"Error executing query: {e}\n\n")
     print(f"SQL results saved to {output_path}")
 
 if __name__ == "__main__":
