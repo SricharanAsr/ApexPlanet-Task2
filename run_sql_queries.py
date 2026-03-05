@@ -8,6 +8,10 @@ sql_path = os.path.join(base_dir, "business_queries.sql")
 output_path = os.path.join(base_dir, "sql_results.txt")
 
 def run_queries():
+    """
+    Connects to the SQLite database, reads SQL queries from a file,
+    executes them, and saves the results to a text file.
+    """
     conn = sqlite3.connect(db_path)
     
     with open(sql_path, 'r') as f:
