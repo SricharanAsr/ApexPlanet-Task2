@@ -1,6 +1,13 @@
-# Executive Dashboard: Sales Performance Insights
+# Strategic KPI Dashboard Mockup
 
-This dashboard mock-up represents the key metrics and insights derived from the Exploratory Data Analysis.
+## 📋 Navigation
+- [Overview](#overview)
+- [Key Metrics](#key-metrics)
+- [Demographics](#demographics)
+- [Category Performance](#category-performance)
+
+## 1. Overview
+This dashboard mock-up presents the key metrics and insights derived from the Exploratory Data Analysis.
 
 ## 📊 Key Performance Indicators (KPIs)
 
