@@ -1,7 +1,7 @@
-# ApexPlanet-Task2: Exploratory Data Analysis (EDA) & Business Intelligence
+# ApexPlanet-Task2: EDA & Business Intelligence
 
 ## 🎯 Objective
-To perform a comprehensive Exploratory Data Analysis on sales data, uncover trends using Python (Pandas, Seaborn), and extract key business insights using SQL.
+This project focuses on performing Exploratory Data Analysis (EDA) on synthetic sales data to uncover significant trends, customer behaviors, and actionable business insights. Using Python for advanced statistical analysis and SQL for database querying, we aim to provide a data-driven approach to business decision-making within the retail domain.
 
 ## 📂 Project Structure
 - `eda_report.md`: Final summary of findings and business recommendations.
