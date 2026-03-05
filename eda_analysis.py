@@ -86,4 +86,6 @@ def perform_eda():
     print("EDA Analysis complete! Visualizations saved in 'plots' folder.")
 
 if __name__ == "__main__":
+    print("Starting Exploratory Data Analysis...")
     perform_eda()
+    print("Usage: python eda_analysis.py (ensure sales_data.csv exists in the same directory)")
