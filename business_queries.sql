@@ -52,3 +52,8 @@ SELECT Category, COUNT(*) as Count
 FROM sales
 GROUP BY Category
 ORDER BY Count DESC;
+-- 7. Average Age by Category
+SELECT Category, AVG(Age) as Avg_Age
+FROM sales
+GROUP BY Category
+ORDER BY Avg_Age DESC;
