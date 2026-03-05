@@ -15,6 +15,10 @@ if not os.path.exists(plots_dir):
     os.makedirs(plots_dir)
 
 def perform_eda():
+    """
+    Performs Exploratory Data Analysis by loading sales data, calculating 
+    summary statistics, and generating various visualizations.
+    """
     # Load data
     df = pd.read_csv(csv_path)
     
