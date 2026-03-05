@@ -12,6 +12,10 @@ base_dir = r"d:\sricharan-A\documents\Apex_Software_solutions\T2"
 if not os.path.exists(base_dir):
     os.makedirs(base_dir)
 
+if not os.access(base_dir, os.W_OK):
+    print(f"Error: Directory {base_dir} is not writable.")
+    exit(1)
+
 def generate_data(n_rows=500):
     """
     Generates synthetic sales data and saves it to a CSV file and a SQLite database.
