@@ -52,8 +52,55 @@ SELECT Category, COUNT(*) as Count
 FROM sales
 GROUP BY Category
 ORDER BY Count DESC;
+
 -- 7. Average Age by Category
 SELECT Category, AVG(Age) as Avg_Age
 FROM sales
 GROUP BY Category
 ORDER BY Avg_Age DESC;
+
+-- 8. Cumulative Revenue (Running Total) over time
+SELECT Purchase_Date, 
+       SUM(Amount) OVER (ORDER BY Purchase_Date) as Cumulative_Revenue
+FROM (
+    SELECT Purchase_Date, SUM(Amount) as Amount
+    FROM sales
+    GROUP BY Purchase_Date
+) t
+ORDER BY Purchase_Date;
+
+-- 9. Category Performance by Month (Pivot-like view)
+SELECT strftime('%Y-%m', Purchase_Date) as Month,
+       SUM(CASE WHEN Category = 'Electronics' THEN Amount ELSE 0 END) as Electronics,
+       SUM(CASE WHEN Category = 'Clothing' THEN Amount ELSE 0 END) as Clothing,
+       SUM(CASE WHEN Category = 'Home' THEN Amount ELSE 0 END) as Home,
+       SUM(CASE WHEN Category = 'Groceries' THEN Amount ELSE 0 END) as Groceries,
+       SUM(CASE WHEN Category = 'Beauty' THEN Amount ELSE 0 END) as Beauty
+FROM sales
+GROUP BY Month
+ORDER BY Month;
+
+-- 10. Customer Segmentation by Spending Level
+SELECT 
+    Customer_Name, 
+    SUM(Amount) as Total_Spend,
+    CASE 
+        WHEN SUM(Amount) > 5000 THEN 'VIP'
+        WHEN SUM(Amount) > 2000 THEN 'Gold'
+        WHEN SUM(Amount) > 1000 THEN 'Silver'
+        ELSE 'Regular'
+    END as Customer_Segment
+FROM sales
+GROUP BY Customer_Name
+ORDER BY Total_Spend DESC;
+
+-- 11. Most volatile days for sales (High standard deviation equivalent)
+SELECT Purchase_Date, 
+       COUNT(*) as Trans_Count, 
+       SUM(Amount) as Daily_Total,
+       AVG(Amount) as Daily_Avg
+FROM sales
+GROUP BY Purchase_Date
+HAVING Trans_Count > 2
+ORDER BY Daily_Total DESC
+LIMIT 10;
